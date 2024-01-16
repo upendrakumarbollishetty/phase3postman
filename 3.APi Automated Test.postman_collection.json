@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "649f052d-03e0-4660-8ed4-5f44c7e7847a",
+		"name": "3.APi Automated Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32291670"
+	},
+	"item": [
+		{
+			"name": "create a user request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/users?URL&PAGE",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "URL",
+							"value": null
+						},
+						{
+							"key": "PAGE",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all user request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users?page=2",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

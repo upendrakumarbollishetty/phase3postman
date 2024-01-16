@@ -1,0 +1,44 @@
+{
+	"info": {
+		"_postman_id": "dad0caef-17ae-475c-b25d-c44f9393289e",
+		"name": "practice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32291670"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "www.facebook.com",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "https://reqres.in/",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "www.facebook.com",
+					"host": [
+						"www",
+						"facebook",
+						"com"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

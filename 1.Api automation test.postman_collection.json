@@ -1,0 +1,52 @@
+{
+	"info": {
+		"_postman_id": "defef0e8-5a5e-498f-b6ab-c90a5c2055fd",
+		"name": "1.Api automation test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32291670"
+	},
+	"item": [
+		{
+			"name": "Get all user requests",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users/3",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user by user id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users/3",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
