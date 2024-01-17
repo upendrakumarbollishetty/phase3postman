@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "16100490-e07c-41b1-a452-198cf62bd4a3",
+		"name": "phasepractice project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32291670",
+		"_collection_link": "https://lunar-shuttle-26120.postman.co/workspace/New-Team-Workspace~07011f31-46af-44c0-a8eb-09a7f4013314/collection/32291670-16100490-e07c-41b1-a452-198cf62bd4a3?action=share&source=collection_link&creator=32291670"
+	},
+	"item": [
+		{
+			"name": "weather report",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Fixed syntax\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response is an object with coord, weather, base, main, visibility, wind, clouds, dt, sys, id, name, and cod properties\", function () {\r",
+							"    pm.expect(pm.response.json()).to.be.an('object').that.has.all.keys('coord', 'weather', 'base', 'main', 'visibility', 'wind', 'clouds', 'dt', 'sys', 'id', 'name', 'cod');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"pm.test(\"Content-Type header is application/json\", function () {\r",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Coord object contains lon and lat properties\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    \r",
+							"    pm.expect(responseData.coord).to.have.property('lon');\r",
+							"    pm.expect(responseData.coord).to.have.property('lat');\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Wind speed is a non-negative number\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    \r",
+							"    pm.expect(responseData.wind.speed).to.be.at.least(0);\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22",
+					"protocol": "https",
+					"host": [
+						"samples",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "London,uk"
+						},
+						{
+							"key": "appid",
+							"value": "b6907d289e10d714a6e88b30761fae22"
+						}
+					]
+				},
+				"description": "\nThis endpoint makes an HTTP GET request to retrieve weather data for a specific location. The request includes the city name and country code as query parameters, along with an API key for authorization.\n\nThe response returns a status code of 200, indicating a successful request. The response body contains various weather-related parameters such as coordinates, weather conditions, temperature, pressure, humidity, visibility, wind speed, cloud coverage, and other relevant details for the specified location.\n"
+			},
+			"response": []
+		}
+	]
+}
